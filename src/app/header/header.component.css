@@ -1,0 +1,10 @@
+.header{
+    border: 2px solid black;
+    height: 50px;
+    background-color: black;
+}
+.header-child{
+    color: white;
+    margin-left: 40px;
+    margin-top: 5px;
+}

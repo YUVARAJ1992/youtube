@@ -1,0 +1,10 @@
+.content{
+    height: 70vh;
+    border: 2px solid Green;
+    margin: 20px;
+}
+
+.contentarea{
+    margin-top: 20px;
+    margin-left: 20px;
+}

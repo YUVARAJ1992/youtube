@@ -1,0 +1,79 @@
+<div class="single-product">
+    <img class="image" src="{{product.cover_image}}"/>
+    <h3>{{product.name}}</h3>
+    <h5>Price : Rs. {{product.price}}</h5>
+    <div>
+        <button class="align-btn">Cart</button>
+        <button class="align-btn" (click)="open(editcontent)">Edit</button>
+        <button class="align-btn" (click)="open(deletecontent)">Delete</button>
+    </div>
+</div>
+
+<!-- Edit Details -->
+<ng-template #editcontent let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Edit Details</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <div>
+            <label class="label">Name</label>
+            <input type="text" placeholder="Enter the product name" class="input" [(ngModel)]="product.name">
+        </div>
+        <div>
+            <label class="label">Category</label>
+            <select class="input" [(ngModel)]="product.category">
+                <option selected disabled>Select any Product</option>
+                <option>Books and Gifts</option>
+                <option>Electronics</option>
+                <option>Household prodcts</option>
+                <option>Mobiles and Computers</option>
+            </select>
+        </div>
+        <div>
+            <label class="label">Price</label>
+            <input type="text" placeholder="Enter the product price" class="input" [(ngModel)]="product.price">
+        </div>
+        <div>
+            <label class="label">Cover Image</label>
+            <input type="text" placeholder="Enter the product image url" class="input" [(ngModel)]="product.cover_image">
+        </div>      
+        <div style="display: flex;">
+            <label class="label">Description</label>
+            <textarea placeholder="Enter the product description" class="input" [(ngModel)]="product.description"></textarea>
+        </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close({value : product, type : 'edit'})">Update product details</button>
+    </div>
+  </ng-template>
+
+  <!-- Delete Details -->
+<ng-template #deletecontent let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Do you want to delete this product ?</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-default" (click)="modal.dismiss('Cross click')" >Cancel</button>
+      <button class="btn btn-danger" (click)="modal.close({value : product, type : 'delete'})">OK</button>
+      <!-- <button type="button" class="btn btn-outline-dark">Update product details</button> -->
+    </div>
+  </ng-template>
+
+  <!-- Delete Success -->
+<ng-template #alertcontent let-alertmodal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{message}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="alertmodal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-danger" (click)="alertmodal.close(product)">OK</button>
+  </div>
+</ng-template>

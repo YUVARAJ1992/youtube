@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+.label{
+    width: 150px;
+}
+.input{
+    width: 300px;
+}
+.image{
+    max-width: 140px;
+    max-height: 169px;
+}
+.align-btn{
+    margin-left: 5px;
+}

@@ -1,0 +1,11 @@
+<div class="content">
+    <h3>This is Moch Parent Component</h3>
+    <h2>The selected character is {{selectedCharacter}}</h2>
+    <div class="contentarea">
+        <input type="text" placeholder="Type any content here..." [(ngModel)]="textMessage"/>
+    <button (click)="onSend()">Send</button>
+    </div>
+
+
+    <app-milk-child [content]="textMessage" (rowData)="onReceived($event)"></app-milk-child>
+</div>

@@ -1,0 +1,71 @@
+<p>users works!</p>
+<div>
+    <button (click)="onLoadUser()">Click and get all user</button>
+</div>
+<br>
+<!-- <div>
+    <button (click)="onLoadSingleUser()">Click and get Single User Data</button>
+</div>
+<br>
+<div>
+    <button (click)="onListResource()">CLick and get List Resource</button>
+</div>
+<br>
+<div>
+    <button (click)="onDeleteData()">Click to Delete Data</button>
+</div> -->
+<table id="customers">
+    <thead>
+        <tr>
+        <th>id</th>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>email</th>
+        <th>avatar</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of userList">
+            <!-- <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td> -->
+            <td>{{ user.id }}</td>
+            <td>{{ user.first_name }}</td>
+            <td>{{ user.last_name }}</td>
+            <td>{{ user.email }}</td>
+            <td><img src="{{ user.avatar }}" /></td>
+        </tr>
+        <!-- <tr *ngIf="userList.length == 0">
+            <td colspan="5">No user profile to show</td>
+        </tr> -->
+    </tbody>
+</table>
+<br>
+<!-- <table id="customers">
+    <thead>
+        <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>color</th>
+        <th>pantone_value</th>
+        <th>year</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let resource of resourceList">
+            <td>{{ resource.id }}</td>
+            <td>{{ resource.name }}</td>
+            <td>{{ resource.color }}</td>
+            <td>{{ resource.pantone_value }}</td>
+            <td>{{ resource.year }}</td>
+        </tr>
+        <tr *ngIf="resourceList.length == 0">
+            <td colspan="5">No resources to show</td>
+        </tr>
+    </tbody>
+</table> -->
+<!-- <button (click)="hide()">Hide</button>
+<button (click)="show()">show</button>
+<div *ngIf="display">Welcome to Moch World</div> -->

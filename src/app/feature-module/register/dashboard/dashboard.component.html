@@ -1,0 +1,20 @@
+  
+<div class="wrapper">
+    <div class="sidebar">
+      <div class="chart-list">
+        <h3 [routerLink]="['/register/bar']" [routerLinkActive]="['active-tab']" [routerLinkActiveOptions]="{exact: true}">BAR CHART</h3>
+      </div>
+      <div class="chart-list">
+        <h3 [routerLink]="['/register/pie']" [routerLinkActive]="['active-tab']" [routerLinkActiveOptions]="{exact: true}">PIE CHART</h3>
+      </div>
+      <div class="chart-list">
+        <h3 [routerLink]="['/register/line']" [routerLinkActive]="['active-tab']" [routerLinkActiveOptions]="{exact: true}">LINE CHART</h3>
+      </div>
+      <div class="chart-list">
+        <h3 [routerLink]="['/register/high']" [routerLinkActive]="['active-tab']" [routerLinkActiveOptions]="{exact: true}">HIGH CHART</h3>
+      </div>
+    </div>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
